@@ -8,4 +8,10 @@ module MyEnumerable
     each { |num| return true if yield(num) }
     false
   end
+
+  def filter
+    result = []
+    each { |num| result.push(num) if yield(num) }
+    result
+  end
 end
